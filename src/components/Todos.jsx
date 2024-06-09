@@ -1,7 +1,6 @@
-import React from "react";
 import TodoItem from "./TodosItem"; // Lakukan import
 
-const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
+const Todos = ({ todos }) => {
   return (
     <div style={styles.container}>
       {todos.map((todo) => {
@@ -10,8 +9,6 @@ const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
             key={todo.id}
             todo={todo}
             // Teruskan function toggleCompleted ke component TodoItem
-            toggleCompleted={toggleCompleted}
-            deleteTodo={deleteTodo}
           />
         );
       })}
