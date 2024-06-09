@@ -1,4 +1,4 @@
-const TodoItem = ({ todo, toggleCompleted }) => {
+const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
   const getTodoTitleStyle = () => {
     if (todo.completed === true) {
       return { textDecoration: "line-through" };
@@ -16,7 +16,9 @@ const TodoItem = ({ todo, toggleCompleted }) => {
       />
       <p style={getTodoTitleStyle()}>{todo.title}</p>
       {/* Tambahkan sebuah button di sini */}
-      <button style={styles.button}>x</button>
+      <button style={styles.button} onClick={() => deleteTodo(todo.id)}>
+        x
+      </button>
     </div>
   );
 };
